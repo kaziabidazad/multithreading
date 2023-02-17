@@ -4,8 +4,8 @@
 package duke.learn.udemy.section01;
 
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @author Kazi
@@ -13,7 +13,7 @@ import java.util.concurrent.BlockingQueue;
  */
 public class L07ProducerConsumer {
 
-    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10000);
+    private static BlockingQueue<Integer> queue = new LinkedBlockingQueue<>();
 
     public static void producer() {
 	Random random = new Random();
@@ -183,6 +183,7 @@ public class L07ProducerConsumer {
 	t1.start();
 	t2.start();
 	t3.start();
+
     }
 
 }
